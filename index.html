@@ -1,0 +1,2902 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Atelier — Visibilité digitale premium pour restaurants</title>
+  <meta name="description" content="Agence de marketing digital premium pour restaurants, cafés, bars et établissements locaux. Google Business Profile, avis, SEO local, réseaux sociaux et visibilité en ligne." />
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: rgba(255, 255, 255, 0.8);
+      --surface-strong: #ffffff;
+      --text: #111214;
+      --muted: #61646b;
+      --line: rgba(17, 18, 20, 0.08);
+      --line-strong: rgba(17, 18, 20, 0.12);
+      --accent: #3478f6;
+      --accent-soft: rgba(52, 120, 246, 0.12);
+      --shadow: 0 20px 60px rgba(10, 15, 25, 0.08);
+      --shadow-soft: 0 12px 30px rgba(10, 15, 25, 0.05);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --container: 1180px;
+      --nav-h: 72px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(52, 120, 246, 0.06), transparent 26%),
+        radial-gradient(circle at top right, rgba(17, 18, 20, 0.03), transparent 24%),
+        var(--bg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 112px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      color: #3b3e45;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 46px;
+    }
+
+    .section-head h2 {
+      margin: 18px 0 14px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      font-weight: 700;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 14px 0 0;
+    }
+
+    .navbar {
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 0 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(17, 18, 20, 0.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 10px 30px rgba(15, 20, 35, 0.05);
+      transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255,255,255,0.82);
+      border-color: rgba(17, 18, 20, 0.08);
+      box-shadow: 0 16px 34px rgba(15, 20, 35, 0.08);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #15171b, #3a76ef);
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 8px 18px rgba(32, 71, 150, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 11px;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.5), transparent 42%);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-text strong {
+      font-size: 0.96rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-text span {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-link {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #434751;
+      font-size: 0.94rem;
+      transition: color 0.25s ease, background 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text);
+      background: rgba(17, 18, 20, 0.05);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.78);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text);
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .menu-btn:hover { transform: translateY(-1px); }
+
+    .btn {
+      appearance: none;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #1a1c20, #0f1013);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(17, 18, 20, 0.18);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 18px 36px rgba(17, 18, 20, 0.24);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.78);
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(17, 18, 20, 0.04);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 14px 28px rgba(17, 18, 20, 0.08);
+    }
+
+    .btn.small {
+      padding: 11px 16px;
+      font-size: 0.94rem;
+    }
+
+    .hero {
+      padding: 48px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+      min-height: calc(100vh - 120px);
+    }
+
+    .hero-copy h1 {
+      margin: 20px 0 18px;
+      font-size: clamp(2.9rem, 7vw, 5.6rem);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+      font-weight: 750;
+      max-width: 760px;
+    }
+
+    .hero-copy p {
+      margin: 0;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: clamp(1.04rem, 1.6vw, 1.22rem);
+      line-height: 1.82;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      color: #434751;
+      font-size: 0.92rem;
+      font-weight: 500;
+      box-shadow: 0 8px 20px rgba(17,18,20,0.03);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .visual-shell {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      min-height: 560px;
+    }
+
+    .glass-card,
+    .metric-card,
+    .floating-card,
+    .offer-chip {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(17, 18, 20, 0.08);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .glass-card {
+      position: absolute;
+      inset: 58px 0 0 44px;
+      border-radius: 34px;
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.32), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .dashboard {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 18px;
+    }
+
+    .dashboard-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dashboard-title strong {
+      display: block;
+      font-size: 1.12rem;
+      letter-spacing: -0.03em;
+    }
+
+    .dashboard-title span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .status-pill {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #2559bd;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .score-panel {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 14px;
+    }
+
+    .panel {
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid rgba(17, 18, 20, 0.06);
+      padding: 22px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-size: 0.98rem;
+      color: #33363d;
+    }
+
+    .big-number {
+      margin-top: 18px;
+      font-size: 3.1rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      font-weight: 730;
+    }
+
+    .trend {
+      margin-top: 10px;
+      font-size: 0.94rem;
+      color: #2559bd;
+      font-weight: 600;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #434751;
+      font-size: 0.95rem;
+    }
+
+    .mini-item strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    .chart-card {
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff, #fafafa);
+      border: 1px solid rgba(17, 18, 20, 0.06);
+      padding: 20px 18px 18px;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chart-grid {
+      position: absolute;
+      inset: 18px 18px 18px 18px;
+      background-image:
+        linear-gradient(to top, rgba(17,18,20,0.06) 1px, transparent 1px),
+        linear-gradient(to right, rgba(17,18,20,0.04) 1px, transparent 1px);
+      background-size: 100% 25%, 20% 100%;
+      border-radius: 16px;
+    }
+
+    .chart-line {
+      position: absolute;
+      inset: 42px 26px 28px 26px;
+    }
+
+    .chart-line svg { width: 100%; height: 100%; }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat-box {
+      border-radius: 20px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(17,18,20,0.06);
+      padding: 18px;
+    }
+
+    .stat-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.34rem;
+      letter-spacing: -0.04em;
+    }
+
+    .metric-card {
+      position: absolute;
+      top: 0;
+      right: 26px;
+      width: 188px;
+      padding: 18px;
+      border-radius: 24px;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .metric-card strong,
+    .floating-card strong,
+    .offer-chip strong {
+      display: block;
+      letter-spacing: -0.03em;
+    }
+
+    .metric-card span,
+    .floating-card span,
+    .offer-chip span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-top: 7px;
+      line-height: 1.5;
+    }
+
+    .metric-card .value {
+      margin-top: 14px;
+      font-size: 2rem;
+      color: var(--text);
+      font-weight: 740;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: 0;
+      bottom: 34px;
+      width: 210px;
+      padding: 18px;
+      border-radius: 24px;
+      animation: float 8.5s ease-in-out infinite 0.8s;
+    }
+
+    .offer-chip {
+      position: absolute;
+      right: 8px;
+      bottom: 112px;
+      width: 220px;
+      padding: 18px;
+      border-radius: 24px;
+      animation: float 9s ease-in-out infinite 1.4s;
+    }
+
+    .offer-chip .tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(52,120,246,0.1);
+      color: #2559bd;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      margin-bottom: 10px;
+    }
+
+    .services-grid,
+    .why-grid,
+    .testimonials-grid,
+    .pricing-grid,
+    .metrics-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(17, 18, 20, 0.1);
+    }
+
+    .service-icon,
+    .why-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #ffffff, #f0f3f8);
+      border: 1px solid rgba(17,18,20,0.06);
+      color: var(--text);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.24rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.98rem;
+    }
+
+    .pricing-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 100%;
+      padding-top: 30px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .price-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top center, rgba(52,120,246,0.08), transparent 42%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,252,255,0.92));
+      border-color: rgba(52,120,246,0.18);
+      box-shadow: 0 24px 54px rgba(39, 82, 168, 0.12);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(52,120,246,0.12);
+      color: #2559bd;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      z-index: 12;
+      box-shadow: 0 10px 20px rgba(39, 82, 168, 0.10);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(52,120,246,0.14);
+    }
+
+    .product-visual {
+      position: relative;
+      height: 230px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(247,248,251,0.92));
+      border: 1px solid rgba(17,18,20,0.06);
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+      margin-top: 10px;
+      margin-bottom: 4px;
+      perspective: 1200px;
+      z-index: 1;
+    }
+
+    .product-visual::before {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto;
+      height: 75%;
+      background: radial-gradient(circle at top center, rgba(52,120,246,0.15), transparent 58%);
+      pointer-events: none;
+    }
+
+    .product-visual::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      width: 62%;
+      height: 22px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(17,18,20,0.14), rgba(17,18,20,0));
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .visual-float {
+      position: absolute;
+      inset: 0;
+      animation: productFloat 7s ease-in-out infinite;
+      transform-style: preserve-3d;
+      z-index: 1;
+    }
+
+    .visual-nfc .nfc-card {
+      position: absolute;
+      left: 22px;
+      top: 56px;
+      width: 178px;
+      height: 112px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #0e1013, #232831);
+      box-shadow: 0 18px 34px rgba(8, 10, 14, 0.28), inset 0 1px 0 rgba(255,255,255,0.12);
+      transform: rotate(-12deg) rotateX(18deg) rotateY(-24deg);
+      overflow: hidden;
+    }
+
+    .visual-nfc .nfc-card::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 17px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.13), rgba(255,255,255,0.02) 40%, rgba(255,255,255,0.08));
+    }
+
+    .visual-nfc .nfc-card::after {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: -28px;
+      width: 100px;
+      height: 160px;
+      transform: rotate(24deg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0));
+    }
+
+    .card-chip {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      width: 28px;
+      height: 20px;
+      border-radius: 6px;
+      background: linear-gradient(180deg, #f6f7fa, #c7ccd6);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+    }
+
+    .card-wave {
+      position: absolute;
+      right: 16px;
+      top: 18px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.78);
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(45deg);
+      opacity: 0.86;
+    }
+
+    .card-title-mini {
+      position: absolute;
+      left: 18px;
+      bottom: 20px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+    }
+
+    .review-star {
+      position: absolute;
+      right: 20px;
+      bottom: 18px;
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 15px;
+      backdrop-filter: blur(6px);
+    }
+
+    .phone-nfc {
+      position: absolute;
+      right: 34px;
+      top: 34px;
+      width: 118px;
+      height: 188px;
+      border-radius: 28px;
+      background: linear-gradient(160deg, #171a20, #0d0f12);
+      box-shadow: 0 20px 34px rgba(10, 12, 18, 0.24), inset 0 1px 0 rgba(255,255,255,0.12);
+      transform: rotate(12deg) rotateX(14deg) rotateY(-18deg) translateZ(20px);
+      padding: 10px;
+    }
+
+    .phone-nfc::before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      width: 42px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      transform: translateX(-50%);
+    }
+
+    .phone-nfc .screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fbfcfe, #eef2f8);
+      border: 1px solid rgba(17,18,20,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .screen-map {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, rgba(52,120,246,0.08), transparent 34%),
+        repeating-linear-gradient(0deg, rgba(17,18,20,0.04), rgba(17,18,20,0.04) 1px, transparent 1px, transparent 24px),
+        repeating-linear-gradient(90deg, rgba(17,18,20,0.03), rgba(17,18,20,0.03) 1px, transparent 1px, transparent 22px),
+        #f8fafc;
+    }
+
+    .screen-pin {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      width: 22px;
+      height: 22px;
+      border-radius: 50% 50% 50% 0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      background: linear-gradient(180deg, #4285f4, #245cc4);
+      box-shadow: 0 10px 18px rgba(52,120,246,0.25);
+    }
+
+    .screen-pin::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .nfc-pulse,
+    .nfc-pulse::before,
+    .nfc-pulse::after {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid rgba(52,120,246,0.18);
+    }
+
+    .nfc-pulse {
+      right: 132px;
+      top: 88px;
+      width: 18px;
+      height: 18px;
+      animation: pulseRing 2.4s ease-out infinite;
+    }
+
+    .nfc-pulse::before,
+    .nfc-pulse::after {
+      content: "";
+      inset: -10px;
+      animation: pulseRing 2.4s ease-out infinite 0.4s;
+    }
+
+    .nfc-pulse::after {
+      inset: -20px;
+      animation-delay: 0.8s;
+    }
+
+    .visual-web .browser-shell {
+      position: absolute;
+      left: 32px;
+      right: 32px;
+      top: 34px;
+      bottom: 30px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff, #f5f7fa);
+      border: 1px solid rgba(17,18,20,0.08);
+      box-shadow: 0 24px 40px rgba(12, 16, 24, 0.12);
+      transform: rotateX(12deg) rotateY(-10deg);
+      overflow: hidden;
+    }
+
+    .browser-topbar {
+      height: 46px;
+      background: linear-gradient(180deg, #fbfcfe, #eef2f6);
+      border-bottom: 1px solid rgba(17,18,20,0.06);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+    }
+
+    .browser-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(17,18,20,0.16);
+    }
+
+    .browser-url {
+      margin-left: 6px;
+      flex: 1;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(17,18,20,0.05);
+    }
+
+    .browser-content {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 16px;
+      padding: 18px;
+      height: calc(100% - 46px);
+    }
+
+    .site-main-card,
+    .site-side-card,
+    .ui-block,
+    .ui-tile {
+      background: linear-gradient(180deg, #ffffff, #f8f9fb);
+      border: 1px solid rgba(17,18,20,0.06);
+      border-radius: 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+
+    .site-main-card {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .site-kicker {
+      width: 72px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(52,120,246,0.14);
+    }
+
+    .site-title {
+      width: 82%;
+      height: 16px;
+      border-radius: 999px;
+      background: rgba(17,18,20,0.12);
+    }
+
+    .site-title.short {
+      width: 56%;
+      height: 12px;
+      background: rgba(17,18,20,0.08);
+    }
+
+    .hero-panel {
+      height: 88px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(52,120,246,0.12), rgba(17,18,20,0.04));
+      border: 1px solid rgba(52,120,246,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.65), rgba(255,255,255,0));
+      right: -14px;
+      top: -24px;
+    }
+
+    .cta-mini {
+      width: 92px;
+      height: 28px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #17191d, #0f1013);
+      box-shadow: 0 8px 16px rgba(17,18,20,0.14);
+    }
+
+    .ui-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ui-block {
+      height: 56px;
+    }
+
+    .site-side-card {
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .ui-tile {
+      height: 54px;
+    }
+
+    .ui-tile.tall {
+      height: 96px;
+      background: linear-gradient(180deg, rgba(52,120,246,0.09), rgba(255,255,255,0.9));
+    }
+
+    .web-floating {
+      position: absolute;
+      right: 18px;
+      bottom: 20px;
+      width: 110px;
+      height: 74px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(17,18,20,0.06);
+      box-shadow: 0 18px 30px rgba(12,16,24,0.08);
+      transform: rotate(9deg) translateZ(22px);
+      padding: 12px;
+      display: grid;
+      gap: 8px;
+      animation: floatAlt 8s ease-in-out infinite;
+    }
+
+    .web-floating span {
+      display: block;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(17,18,20,0.08);
+    }
+
+    .web-floating span:last-child {
+      width: 62%;
+      background: rgba(52,120,246,0.18);
+    }
+
+    .visual-social .social-phone {
+      position: absolute;
+      left: 50%;
+      top: 18px;
+      width: 154px;
+      height: 204px;
+      border-radius: 34px;
+      background: linear-gradient(160deg, #191d24, #0d0f12);
+      box-shadow: 0 24px 40px rgba(10, 12, 18, 0.25), inset 0 1px 0 rgba(255,255,255,0.12);
+      transform: translateX(-50%) rotate(-8deg) rotateX(16deg) rotateY(-18deg);
+      padding: 11px;
+    }
+
+    .visual-social .social-phone::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 46px;
+      height: 6px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .social-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 26px;
+      background: linear-gradient(180deg, #fbfcfe, #eef2f7);
+      border: 1px solid rgba(17,18,20,0.05);
+      overflow: hidden;
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .social-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #dbe6fb, #bfcff2);
+    }
+
+    .social-lines {
+      flex: 1;
+      display: grid;
+      gap: 5px;
+    }
+
+    .social-lines span {
+      display: block;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(17,18,20,0.1);
+    }
+
+    .social-lines span:last-child { width: 52%; }
+
+    .post-card {
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid rgba(17,18,20,0.05);
+      overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+    }
+
+    .post-media {
+      height: 62px;
+      background: linear-gradient(135deg, rgba(52,120,246,0.14), rgba(17,18,20,0.04));
+      position: relative;
+    }
+
+    .post-media::after {
+      content: "";
+      position: absolute;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.6), rgba(255,255,255,0));
+      right: -10px;
+      top: -18px;
+    }
+
+    .post-body {
+      padding: 10px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .post-body span {
+      display: block;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(17,18,20,0.08);
+    }
+
+    .post-body span.short { width: 64%; }
+
+    .post-actions {
+      display: flex;
+      gap: 8px;
+      padding: 0 10px 10px;
+    }
+
+    .post-actions i {
+      display: block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(52,120,246,0.12);
+    }
+
+    .social-floating-card,
+    .social-side-card {
+      position: absolute;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(17,18,20,0.06);
+      box-shadow: 0 16px 28px rgba(12,16,24,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .social-floating-card {
+      left: 20px;
+      top: 52px;
+      width: 90px;
+      padding: 12px;
+      transform: rotate(-10deg) translateZ(12px);
+      animation: floatAlt 8.2s ease-in-out infinite 0.3s;
+    }
+
+    .social-floating-card strong,
+    .social-side-card strong {
+      display: block;
+      font-size: 1.1rem;
+      letter-spacing: -0.04em;
+    }
+
+    .social-floating-card span,
+    .social-side-card span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .social-side-card {
+      right: 18px;
+      bottom: 26px;
+      width: 118px;
+      padding: 12px;
+      transform: rotate(8deg) translateZ(14px);
+      animation: floatAlt 9s ease-in-out infinite 0.8s;
+    }
+
+    .engagement-row {
+      margin-top: 9px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .engagement-row i {
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(52,120,246,0.12);
+    }
+
+    .price-top {
+      padding-right: 0;
+    }
+
+    .price-title {
+      margin: 0;
+      font-size: 1.32rem;
+      letter-spacing: -0.03em;
+    }
+
+    .price-sub {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 0.96rem;
+    }
+
+    .price {
+      display: flex;
+      align-items: end;
+      gap: 7px;
+      margin-top: 4px;
+    }
+
+    .price strong {
+      font-size: 3rem;
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .benefit-box {
+      background: rgba(17,18,20,0.03);
+      border: 1px solid rgba(17,18,20,0.05);
+      padding: 16px 18px;
+      border-radius: 20px;
+      color: #2f343b;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex: 1;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #363b44;
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    .feature-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      margin-top: 7px;
+      background: linear-gradient(180deg, #3f80f5, #245cc4);
+      flex: 0 0 auto;
+      box-shadow: 0 0 0 5px rgba(52,120,246,0.09);
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .compare-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .compare-card h3 {
+      margin: 0 0 20px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .compare-state {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .state-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 16px;
+      border-radius: 18px;
+      background: rgba(17,18,20,0.03);
+      color: #373b43;
+    }
+
+    .state-row strong {
+      font-size: 0.95rem;
+      font-weight: 650;
+    }
+
+    .state-tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .state-tag.weak {
+      background: rgba(17,18,20,0.08);
+      color: #5b6069;
+    }
+
+    .state-tag.good {
+      background: rgba(52,120,246,0.1);
+      color: #2559bd;
+    }
+
+    .compare-score {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .score-box {
+      padding: 18px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid rgba(17,18,20,0.05);
+    }
+
+    .score-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 10px;
+    }
+
+    .score-box strong {
+      font-size: 1.6rem;
+      letter-spacing: -0.05em;
+    }
+
+    .compare-arrow {
+      align-self: center;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.84);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+    }
+
+    .simulator-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .sim-card,
+    .result-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .slider-group {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(17,18,20,0.06);
+    }
+
+    .slider-group:first-child { padding-top: 4px; }
+    .slider-group:last-child { border-bottom: none; padding-bottom: 4px; }
+
+    .slider-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .slider-head strong {
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .slider-value {
+      font-size: 0.96rem;
+      color: var(--text);
+      font-weight: 650;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(17,18,20,0.04);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      appearance: none;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(52,120,246,0.95), rgba(52,120,246,0.22));
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid rgba(17,18,20,0.08);
+      box-shadow: 0 8px 18px rgba(17,18,20,0.16);
+      cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 22px;
+      height: 22px;
+      border: none;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(17,18,20,0.16);
+      cursor: pointer;
+    }
+
+    .sim-note {
+      margin-top: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .result-top h3 {
+      margin: 0;
+      font-size: 1.28rem;
+      letter-spacing: -0.03em;
+    }
+
+    .result-top p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .metrics-grid {
+      margin-top: 26px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .metric-box {
+      background: linear-gradient(180deg, #ffffff, #fafafa);
+      border: 1px solid rgba(17,18,20,0.05);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .metric-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .metric-box strong {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+    }
+
+    .metric-box small {
+      display: block;
+      color: #40454d;
+      line-height: 1.55;
+      font-size: 0.92rem;
+    }
+
+    .result-highlight {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(52,120,246,0.08);
+      color: #234b95;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      min-height: 100%;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 4px;
+      color: #2559bd;
+    }
+
+    .testimonial p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #2f343b;
+      margin: 0;
+      flex: 1;
+    }
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #e9edf6, #dce4f4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #253042;
+      border: 1px solid rgba(17,18,20,0.06);
+    }
+
+    .author strong {
+      display: block;
+      font-size: 0.98rem;
+      letter-spacing: -0.02em;
+    }
+
+    .author span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .contact-panel,
+    .form-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-panel h3,
+    .form-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .contact-panel p,
+    .form-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-item {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(17,18,20,0.03);
+      color: #363b44;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 7px;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      font-size: 0.92rem;
+      color: #353a42;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(17,18,20,0.1);
+      background: rgba(255,255,255,0.88);
+      border-radius: 16px;
+      padding: 15px 16px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(52,120,246,0.42);
+      box-shadow: 0 0 0 4px rgba(52,120,246,0.1);
+      background: #fff;
+    }
+
+    .form-actions {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .success-msg {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(52,120,246,0.08);
+      color: #234b95;
+      font-weight: 600;
+    }
+
+    .footer {
+      padding: 34px 0 52px;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(17,18,20,0.08);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes productFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes floatAlt {
+      0%, 100% { transform: rotate(8deg) translateY(0); }
+      50% { transform: rotate(8deg) translateY(-5px); }
+    }
+
+    @keyframes pulseRing {
+      0% { transform: scale(0.85); opacity: 0.55; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    @media (max-width: 1140px) {
+      .hero-grid,
+      .simulator-wrap,
+      .contact-wrap,
+      .comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-arrow {
+        width: 58px;
+        height: 58px;
+        justify-self: center;
+        transform: rotate(90deg);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+
+      .hero-grid {
+        min-height: auto;
+      }
+
+      .hero-visual {
+        min-height: 540px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      :root { --nav-h: 66px; }
+
+      .nav-links,
+      .nav-actions .btn.small {
+        display: none;
+      }
+
+      .menu-btn { display: inline-flex; }
+
+      .navbar {
+        position: relative;
+        overflow: visible;
+      }
+
+      .nav-links.mobile-open {
+        display: grid;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(100% + 10px);
+        padding: 12px;
+        border-radius: 22px;
+        background: rgba(255,255,255,0.92);
+        border: 1px solid rgba(17,18,20,0.08);
+        box-shadow: 0 16px 38px rgba(15,20,35,0.08);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+      }
+
+      .nav-links.mobile-open .nav-link {
+        padding: 12px 14px;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .testimonials-grid,
+      .why-grid,
+      .metrics-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1 {
+        max-width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 500px;
+      }
+
+      .visual-shell {
+        min-height: 500px;
+      }
+
+      .glass-card {
+        inset: 54px 0 0 14px;
+      }
+
+      .metric-card {
+        right: 8px;
+      }
+
+      .offer-chip {
+        right: 0;
+      }
+
+      .score-panel,
+      .stats-row,
+      .compare-score {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 92px 0;
+      }
+
+      .product-visual {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(calc(100% - 20px), var(--container));
+      }
+
+      .navbar {
+        padding: 0 12px;
+        border-radius: 18px;
+      }
+
+      .brand-text span { display: none; }
+
+      .hero {
+        padding-bottom: 46px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.5rem, 13vw, 4rem);
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn { width: 100%; }
+
+      .hero-visual {
+        min-height: 460px;
+      }
+
+      .visual-shell,
+      .glass-card {
+        min-height: 460px;
+      }
+
+      .glass-card {
+        inset: 60px 0 0 0;
+        padding: 18px;
+        border-radius: 28px;
+      }
+
+      .metric-card,
+      .floating-card,
+      .offer-chip {
+        width: 172px;
+        padding: 14px;
+        border-radius: 20px;
+      }
+
+      .floating-card {
+        left: 4px;
+        bottom: 18px;
+      }
+
+      .offer-chip {
+        bottom: 88px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .card,
+      .compare-card,
+      .sim-card,
+      .result-card,
+      .contact-panel,
+      .form-card {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .price strong,
+      .big-number,
+      .metric-box strong {
+        font-size: 2.35rem;
+      }
+
+      .form-actions {
+        align-items: stretch;
+      }
+
+      .product-visual {
+        height: 220px;
+      }
+
+      .popular-badge {
+        top: 14px;
+        right: 14px;
+        font-size: 0.76rem;
+        padding: 8px 11px;
+      }
+
+      .visual-nfc .nfc-card {
+        left: 10px;
+        top: 64px;
+        width: 150px;
+        height: 96px;
+      }
+
+      .phone-nfc {
+        right: 18px;
+        width: 100px;
+        height: 164px;
+      }
+
+      .visual-social .social-phone {
+        width: 136px;
+        height: 188px;
+      }
+
+      .social-floating-card,
+      .social-side-card,
+      .web-floating {
+        display: none;
+      }
+
+      .browser-content {
+        grid-template-columns: 1fr;
+      }
+
+      .site-side-card {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <div class="container">
+      <header class="navbar" id="navbar">
+        <a href="#top" class="brand" aria-label="Local Atelier">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            <strong>Local Atelier</strong>
+            <span>Visibilité digitale premium</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#offres">Offres</a>
+          <a class="nav-link" href="#avant-apres">Avant / Après</a>
+          <a class="nav-link" href="#simulateur">Simulateur</a>
+          <a class="nav-link" href="#temoignages">Avis</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-secondary small">Demander un audit</a>
+          <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 12H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy reveal visible">
+            <div class="eyebrow">Agence digitale pour restaurants, cafés et établissements locaux</div>
+            <h1>Rendez votre établissement visible, crédible et désirable en ligne.</h1>
+            <p>
+              Nous aidons les restaurants, bars et cafés à mieux apparaître sur Google, à inspirer confiance, à convertir plus de visites en réservations et à construire une présence digitale claire, premium et efficace.
+            </p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Demander un rendez-vous</a>
+              <a href="#simulateur" class="btn btn-secondary">Estimer mon potentiel</a>
+            </div>
+            <div class="hero-badges">
+              <span class="badge">+120 établissements accompagnés</span>
+              <span class="badge">Focus visibilité locale</span>
+              <span class="badge">Approche orientée conversion</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="visual-shell">
+              <div class="metric-card">
+                <strong>Visibilité locale</strong>
+                <span>Recherche Google, Maps, réputation et conversion.</span>
+                <div class="value">+48%</div>
+              </div>
+
+              <div class="glass-card">
+                <div class="dashboard">
+                  <div class="dashboard-top">
+                    <div class="dashboard-title">
+                      <strong>Tableau de présence locale</strong>
+                      <span>Vue simple et lisible de votre performance en ligne</span>
+                    </div>
+                    <div class="status-pill">Optimisation active</div>
+                  </div>
+
+                  <div class="score-panel">
+                    <div class="panel">
+                      <h3>Score de visibilité</h3>
+                      <div class="big-number">92</div>
+                      <div class="trend">+27% sur 90 jours</div>
+                    </div>
+                    <div class="panel">
+                      <h3>Ce mois-ci</h3>
+                      <div class="mini-list">
+                        <div class="mini-item"><span>Appels</span><strong>184</strong></div>
+                        <div class="mini-item"><span>Demandes d’itinéraire</span><strong>312</strong></div>
+                        <div class="mini-item"><span>Réservations</span><strong>96</strong></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="chart-card">
+                    <div class="chart-grid"></div>
+                    <div class="chart-line" aria-hidden="true">
+                      <svg viewBox="0 0 400 180" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="lineFill" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stop-color="rgba(52,120,246,0.24)" />
+                            <stop offset="100%" stop-color="rgba(52,120,246,0)" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M0 140 C40 132, 55 128, 86 118 C116 108, 132 110, 160 98 C192 84, 214 79, 240 70 C266 61, 290 58, 320 42 C346 28, 366 24, 400 16 L400 180 L0 180 Z" fill="url(#lineFill)"></path>
+                        <path d="M0 140 C40 132, 55 128, 86 118 C116 108, 132 110, 160 98 C192 84, 214 79, 240 70 C266 61, 290 58, 320 42 C346 28, 366 24, 400 16" fill="none" stroke="#3478f6" stroke-width="5" stroke-linecap="round"></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="stats-row">
+                    <div class="stat-box">
+                      <span>Note moyenne</span>
+                      <strong>4,8 / 5</strong>
+                    </div>
+                    <div class="stat-box">
+                      <span>SEO local</span>
+                      <strong>Top 3</strong>
+                    </div>
+                    <div class="stat-box">
+                      <span>Taux de conversion</span>
+                      <strong>+31%</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="floating-card">
+                <strong>Avis & réputation</strong>
+                <span>Des demandes d’avis plus fluides, une image plus rassurante, plus de clics utiles.</span>
+              </div>
+
+              <div class="offer-chip">
+                <div class="tag">Le plus vendu</div>
+                <strong>Cartes Google NFC</strong>
+                <span>Le geste simple qui augmente les avis et renforce la preuve sociale au bon moment.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Services</div>
+          <h2>Une présence digitale claire, cohérente et pensée pour attirer plus de clients.</h2>
+          <p>
+            Chaque levier est conçu pour améliorer votre visibilité locale, votre crédibilité et votre capacité à convertir une recherche en visite, appel ou réservation.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21C16.4183 21 20 17.4183 20 13C20 8.58172 16.4183 5 12 5C7.58172 5 4 8.58172 4 13C4 17.4183 7.58172 21 12 21Z" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M12 9.5V13L14.5 15.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                <path d="M8 4H16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Google Business Profile</h3>
+            <p>Optimisation complète de votre fiche Google pour mieux apparaître sur Maps, inspirer confiance et générer plus d’actions utiles.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3L14.7 8.5L21 9.4L16.5 13.7L17.6 20L12 17L6.4 20L7.5 13.7L3 9.4L9.3 8.5L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Gestion des avis</h3>
+            <p>Mise en place d’un système simple et premium pour récolter plus d’avis, mieux répondre et faire rayonner votre réputation.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 18L9 13L13 16L20 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 13V8H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>SEO local</h3>
+            <p>Travail ciblé sur les requêtes locales pour augmenter votre présence là où vos futurs clients vous cherchent vraiment.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 10.5C7 8.01472 9.01472 6 11.5 6H12.5C14.9853 6 17 8.01472 17 10.5V17C17 18.6569 15.6569 20 14 20H10C8.34315 20 7 18.6569 7 17V10.5Z" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M9 4H15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Réseaux sociaux</h3>
+            <p>Une présence sociale régulière, élégante et cohérente pour faire exister votre lieu dans l’esprit de votre audience locale.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M8 10H16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                <path d="M8 14H13" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Création de contenu</h3>
+            <p>Photos, textes, posts et angles éditoriaux pensés pour valoriser l’expérience, l’ambiance et la désirabilité de votre établissement.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 12L20 4L15 20L11.5 13.5L4 12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Publicité locale</h3>
+            <p>Campagnes simples et rentables pour toucher les bonnes personnes autour de vous, au bon moment et avec le bon message.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offres">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Offres & abonnements</div>
+          <h2>Trois offres lisibles, premium et directement activables.</h2>
+          <p>
+            Des abonnements clairs, conçus pour apporter des résultats visibles sans complexité inutile. Chaque offre peut être déployée rapidement selon votre niveau de maturité digitale.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="card price-card featured reveal">
+            <div class="popular-badge">Le plus vendu</div>
+            <div class="product-visual visual-nfc" aria-hidden="true">
+              <div class="visual-float">
+                <div class="nfc-card">
+                  <div class="card-chip"></div>
+                  <div class="card-wave"></div>
+                  <div class="card-title-mini">Google Reviews</div>
+                  <div class="review-star">★</div>
+                </div>
+                <div class="phone-nfc">
+                  <div class="screen">
+                    <div class="screen-map"></div>
+                    <div class="screen-pin"></div>
+                  </div>
+                </div>
+                <div class="nfc-pulse"></div>
+              </div>
+            </div>
+            <div class="price-top">
+              <h3 class="price-title">Cartes Google NFC</h3>
+              <p class="price-sub">Un produit redoutablement efficace pour déclencher plus d’avis et renforcer votre crédibilité en salle, au comptoir ou au moment du paiement.</p>
+            </div>
+            <div class="price"><strong>49€</strong><span>/ mois</span></div>
+            <div class="benefit-box">Idéal pour les restaurants qui veulent améliorer rapidement leur réputation en ligne avec une solution simple, élégante et concrète.</div>
+            <ul class="feature-list">
+              <li>Cartes NFC prêtes à l’emploi</li>
+              <li>Redirection directe vers votre fiche Google</li>
+              <li>Accompagnement pour maximiser les avis</li>
+              <li>Optimisation du parcours client sur place</li>
+              <li>Suivi mensuel de la performance</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Choisir cette offre</a>
+          </article>
+
+          <article class="card price-card reveal">
+            <div class="product-visual visual-web" aria-hidden="true">
+              <div class="visual-float">
+                <div class="browser-shell">
+                  <div class="browser-topbar">
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+                    <span class="browser-dot"></span>
+                    <div class="browser-url"></div>
+                  </div>
+                  <div class="browser-content">
+                    <div class="site-main-card">
+                      <div class="site-kicker"></div>
+                      <div class="site-title"></div>
+                      <div class="site-title short"></div>
+                      <div class="hero-panel"></div>
+                      <div class="cta-mini"></div>
+                      <div class="ui-grid">
+                        <div class="ui-block"></div>
+                        <div class="ui-block"></div>
+                      </div>
+                    </div>
+                    <div class="site-side-card">
+                      <div class="ui-tile tall"></div>
+                      <div class="ui-tile"></div>
+                      <div class="ui-tile"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="web-floating">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="price-top">
+              <h3 class="price-title">Création & maintenance de site web</h3>
+              <p class="price-sub">Un site sobre, rapide et crédible pour présenter votre lieu, rassurer vos visiteurs et transformer l’intérêt en réservation ou en contact.</p>
+            </div>
+            <div class="price"><strong>199€</strong><span>/ mois</span></div>
+            <div class="benefit-box">Parfait pour disposer d’un site premium sans friction technique, toujours à jour, mobile-first et pensé pour convertir.</div>
+            <ul class="feature-list">
+              <li>Design responsive haut de gamme</li>
+              <li>Mises à jour et maintenance incluses</li>
+              <li>SEO local de base intégré</li>
+              <li>Formulaire de contact et CTA clairs</li>
+              <li>Performance et lisibilité optimisées</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Découvrir cette offre</a>
+          </article>
+
+          <article class="card price-card reveal">
+            <div class="product-visual visual-social" aria-hidden="true">
+              <div class="visual-float">
+                <div class="social-floating-card">
+                  <strong>+42%</strong>
+                  <span>Engagement local</span>
+                </div>
+                <div class="social-phone">
+                  <div class="social-screen">
+                    <div class="social-header">
+                      <div class="social-avatar"></div>
+                      <div class="social-lines">
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="post-card">
+                      <div class="post-media"></div>
+                      <div class="post-body">
+                        <span></span>
+                        <span class="short"></span>
+                      </div>
+                      <div class="post-actions"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="post-card">
+                      <div class="post-body">
+                        <span></span>
+                        <span></span>
+                        <span class="short"></span>
+                      </div>
+                      <div class="post-actions"><i></i><i></i></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="social-side-card">
+                  <strong>24/7</strong>
+                  <span>Présence continue</span>
+                  <div class="engagement-row"><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="price-top">
+              <h3 class="price-title">Gestion des réseaux sociaux</h3>
+              <p class="price-sub">Une présence régulière et soignée pour garder votre établissement visible, désirable et cohérent sur les plateformes clés.</p>
+            </div>
+            <div class="price"><strong>299€</strong><span>/ mois</span></div>
+            <div class="benefit-box">Une offre pensée pour développer votre image, votre notoriété locale et la régularité de votre communication.</div>
+            <ul class="feature-list">
+              <li>Calendrier éditorial mensuel</li>
+              <li>Création de publications et visuels</li>
+              <li>Stratégie de contenu locale</li>
+              <li>Optimisation de la cohérence de marque</li>
+              <li>Suivi des performances clés</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Parler de mon projet</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="avant-apres">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Avant / Après</div>
+          <h2>Ce que change une bonne présence en ligne.</h2>
+          <p>
+            La différence n’est pas seulement visuelle. Elle se ressent sur la confiance, le nombre d’actions utiles et la capacité de votre établissement à être choisi plutôt qu’ignoré.
+          </p>
+        </div>
+
+        <div class="comparison">
+          <article class="compare-card reveal">
+            <h3>Établissement peu visible</h3>
+            <div class="compare-state">
+              <div class="state-row"><strong>Fiche Google incomplète</strong><span class="state-tag weak">Faible</span></div>
+              <div class="state-row"><strong>Peu d’avis récents</strong><span class="state-tag weak">Instable</span></div>
+              <div class="state-row"><strong>Site daté ou absent</strong><span class="state-tag weak">Frein</span></div>
+              <div class="state-row"><strong>Réseaux peu actifs</strong><span class="state-tag weak">Invisible</span></div>
+            </div>
+            <div class="compare-score">
+              <div class="score-box"><span>Trafic local</span><strong>Bas</strong></div>
+              <div class="score-box"><span>Confiance</span><strong>Fragile</strong></div>
+            </div>
+          </article>
+
+          <div class="compare-arrow reveal" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <article class="compare-card reveal">
+            <h3>Établissement bien positionné</h3>
+            <div class="compare-state">
+              <div class="state-row"><strong>Présence Google optimisée</strong><span class="state-tag good">Visible</span></div>
+              <div class="state-row"><strong>Avis nombreux et récents</strong><span class="state-tag good">Rassurant</span></div>
+              <div class="state-row"><strong>Site clair et premium</strong><span class="state-tag good">Crédible</span></div>
+              <div class="state-row"><strong>Contenus réguliers</strong><span class="state-tag good">Désirable</span></div>
+            </div>
+            <div class="compare-score">
+              <div class="score-box"><span>Trafic local</span><strong>Élevé</strong></div>
+              <div class="score-box"><span>Conversion</span><strong>Plus forte</strong></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="simulateur">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Simulateur</div>
+          <h2>Combien de clients en plus pourriez-vous générer&nbsp;?</h2>
+          <p>
+            Ajustez quelques paramètres pour obtenir une estimation simple et lisible du potentiel que votre visibilité en ligne peut représenter pour votre établissement.
+          </p>
+        </div>
+
+        <div class="simulator-wrap">
+          <div class="sim-card reveal">
+            <div class="slider-group">
+              <div class="slider-head">
+                <strong>Visiteurs mensuels</strong>
+                <span class="slider-value" id="visitorsValue">1 500</span>
+              </div>
+              <input id="visitors" type="range" min="300" max="10000" step="100" value="1500" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-head">
+                <strong>Taux de conversion actuel</strong>
+                <span class="slider-value" id="conversionValue">6%</span>
+              </div>
+              <input id="conversion" type="range" min="1" max="20" step="1" value="6" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-head">
+                <strong>Gain de visibilité</strong>
+                <span class="slider-value" id="visibilityValue">35%</span>
+              </div>
+              <input id="visibility" type="range" min="5" max="120" step="5" value="35" />
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-head">
+                <strong>Panier moyen</strong>
+                <span class="slider-value" id="basketValue">28€</span>
+              </div>
+              <input id="basket" type="range" min="8" max="120" step="1" value="28" />
+            </div>
+
+            <p class="sim-note">
+              Cette estimation a pour but de vous donner un ordre de grandeur réaliste et pédagogique. Les résultats dépendent ensuite de la qualité de votre offre, de votre zone et de votre exécution.
+            </p>
+          </div>
+
+          <div class="result-card reveal">
+            <div class="result-top">
+              <h3>Projection de potentiel</h3>
+              <p>Une vision simple de ce qu’une meilleure présence locale peut produire en trafic, en clients et en chiffre d’affaires potentiel.</p>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-box">
+                <span>Trafic supplémentaire</span>
+                <strong id="extraTraffic">525</strong>
+                <small>Visiteurs mensuels additionnels estimés grâce au gain de visibilité.</small>
+              </div>
+              <div class="metric-box">
+                <span>Clients supplémentaires</span>
+                <strong id="extraCustomers">32</strong>
+                <small>Clients potentiels générés à partir du trafic additionnel et du taux de conversion.</small>
+              </div>
+              <div class="metric-box">
+                <span>Revenu potentiel</span>
+                <strong id="extraRevenue">896€</strong>
+                <small>Projection mensuelle basée sur le panier moyen indiqué.</small>
+              </div>
+              <div class="metric-box">
+                <span>Retour potentiel</span>
+                <strong id="potentialReturn">18,3x</strong>
+                <small>Repère indicatif comparé à une action digitale simple et bien exécutée.</small>
+              </div>
+            </div>
+
+            <div class="result-highlight" id="simSummary">
+              Avec ces hypothèses, une amélioration de votre visibilité pourrait générer une croissance mensuelle très concrète et soutenir vos réservations sur la durée.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pourquoi-nous">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Pourquoi nous choisir</div>
+          <h2>Une approche précise, calme et orientée résultats.</h2>
+          <p>
+            Nous combinons exigence visuelle, compréhension des enjeux locaux et logique de conversion pour faire de votre présence digitale un véritable actif commercial.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="card reveal">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M3.5 9H20.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                <path d="M3.5 15H20.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Expertise locale</h3>
+            <p>Nous travaillons sur les leviers qui comptent vraiment pour les commerces physiques et les établissements ancrés dans leur zone.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 19V11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M12 19V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M19 19V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Résultats mesurables</h3>
+            <p>Nous privilégions les actions visibles, suivies et compréhensibles pour que chaque amélioration ait une traduction concrète.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M8 12H16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Image premium</h3>
+            <p>Un établissement bien présenté inspire davantage confiance. Nous soignons chaque point de contact pour renforcer votre perception de qualité.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="why-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M7 12H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M10 17H14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Approche orientée conversion</h3>
+            <p>Notre objectif n’est pas de faire du bruit, mais de rendre votre parcours plus clair pour générer plus d’appels, de visites et de réservations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="temoignages">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Témoignages</div>
+          <h2>Des retours sobres, concrets et parlants.</h2>
+          <p>
+            La bonne présence digitale ne se remarque pas par des artifices. Elle se voit dans la confiance qu’elle inspire et dans les résultats qu’elle soutient.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="card testimonial reveal">
+            <div class="stars" aria-label="5 étoiles">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+            </div>
+            <p>« En quelques semaines, notre fiche Google est devenue bien plus propre, nous avons obtenu davantage d’avis et les nouveaux clients nous disent plus souvent qu’ils nous ont choisis en ligne. »</p>
+            <div class="author">
+              <div class="avatar">ML</div>
+              <div>
+                <strong>Marion Lefèvre</strong>
+                <span>Gérante d’un restaurant bistronomique</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial reveal">
+            <div class="stars" aria-label="5 étoiles">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+            </div>
+            <p>« Le site a tout changé dans la perception de notre café. C’est plus clair, plus élégant, plus rassurant, et les demandes de privatisation ont nettement augmenté. »</p>
+            <div class="author">
+              <div class="avatar">SB</div>
+              <div>
+                <strong>Sofiane Benali</strong>
+                <span>Fondateur d’un coffee shop indépendant</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card testimonial reveal">
+            <div class="stars" aria-label="5 étoiles">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.3L5.8 21l1.7-7.1L2 9.2l7.3-.6L12 2l2.7 6.6 7.3.6-5.5 4.7 1.7 7.1z"/></svg>
+            </div>
+            <p>« Nous voulions quelque chose de simple, propre et sérieux. C’est exactement ce que nous avons obtenu, avec une vraie logique de conversion et des résultats visibles sur nos appels. »</p>
+            <div class="author">
+              <div class="avatar">CT</div>
+              <div>
+                <strong>Claire Thomas</strong>
+                <span>Directrice d’un bar à vin urbain</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Contact</div>
+          <h2>Parlons de votre visibilité en ligne.</h2>
+          <p>
+            Décrivez brièvement votre établissement et votre besoin. Nous reviendrons vers vous avec une recommandation claire, utile et adaptée à votre situation.
+          </p>
+        </div>
+
+        <div class="contact-wrap">
+          <aside class="contact-panel reveal">
+            <h3>Une approche simple dès le premier échange</h3>
+            <p>Pas de discours inutile. Nous regardons l’essentiel&nbsp;: votre visibilité actuelle, votre image perçue, vos priorités et le potentiel le plus immédiat.</p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Audit de présence locale</strong>
+                <span>Lecture rapide de votre visibilité Google, de vos avis et des points de friction de votre parcours.</span>
+              </div>
+              <div class="contact-item">
+                <strong>Recommandation claire</strong>
+                <span>Une proposition lisible, cohérente et directement activable selon votre niveau de maturité digitale.</span>
+              </div>
+              <div class="contact-item">
+                <strong>Priorité à la conversion</strong>
+                <span>Chaque action vise un résultat concret&nbsp;: plus de confiance, plus de clics utiles, plus de clients.</span>
+              </div>
+            </div>
+          </aside>
+
+          <div class="form-card reveal">
+            <h3>Demande de contact</h3>
+            <p>Remplissez ce formulaire en quelques instants. Il est pensé pour rester clair, rapide et agréable sur tous les écrans.</p>
+
+            <form id="contactForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Nom</label>
+                  <input id="name" name="name" type="text" placeholder="Votre nom" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="vous@exemple.com" required />
+                </div>
+
+                <div class="field">
+                  <label for="business">Établissement</label>
+                  <input id="business" name="business" type="text" placeholder="Nom de votre établissement" required />
+                </div>
+
+                <div class="field">
+                  <label for="offer">Offre choisie</label>
+                  <select id="offer" name="offer">
+                    <option value="Cartes Google NFC">Cartes Google NFC</option>
+                    <option value="Création & maintenance de site web">Création & maintenance de site web</option>
+                    <option value="Gestion des réseaux sociaux">Gestion des réseaux sociaux</option>
+                    <option value="Audit / conseil">Audit / conseil</option>
+                  </select>
+                </div>
+
+                <div class="field full">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Présentez brièvement votre situation, vos objectifs ou votre besoin."></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+                <div class="form-note">Réponse claire, rapide et adaptée à votre établissement.</div>
+              </div>
+
+              <div class="success-msg" id="successMsg">Merci. Votre demande a bien été prise en compte.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>© 2026 Local Atelier — Visibilité digitale premium pour établissements locaux.</div>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#offres">Offres</a>
+          <a href="#simulateur">Simulateur</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navAnchors = Array.from(document.querySelectorAll('.nav-link'));
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
+
+    const updateNavbar = () => {
+      if (window.scrollY > 8) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+
+    updateNavbar();
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navAnchors.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mobile-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -8% 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (!el.classList.contains('visible')) sectionObserver.observe(el);
+    });
+
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navAnchors.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-40% 0px -50% 0px',
+      threshold: 0.01
+    });
+
+    sections.forEach(section => activeObserver.observe(section));
+
+    const sliders = {
+      visitors: document.getElementById('visitors'),
+      conversion: document.getElementById('conversion'),
+      visibility: document.getElementById('visibility'),
+      basket: document.getElementById('basket')
+    };
+
+    const displays = {
+      visitorsValue: document.getElementById('visitorsValue'),
+      conversionValue: document.getElementById('conversionValue'),
+      visibilityValue: document.getElementById('visibilityValue'),
+      basketValue: document.getElementById('basketValue'),
+      extraTraffic: document.getElementById('extraTraffic'),
+      extraCustomers: document.getElementById('extraCustomers'),
+      extraRevenue: document.getElementById('extraRevenue'),
+      potentialReturn: document.getElementById('potentialReturn'),
+      simSummary: document.getElementById('simSummary')
+    };
+
+    const formatNumber = (value) => new Intl.NumberFormat('fr-FR').format(Math.round(value));
+    const formatCurrency = (value) => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+
+    function updateSimulator() {
+      const visitors = Number(sliders.visitors.value);
+      const conversion = Number(sliders.conversion.value) / 100;
+      const visibility = Number(sliders.visibility.value) / 100;
+      const basket = Number(sliders.basket.value);
+
+      const extraTraffic = visitors * visibility;
+      const extraCustomers = extraTraffic * conversion;
+      const extraRevenue = extraCustomers * basket;
+      const referenceInvestment = 49;
+      const potentialReturn = extraRevenue / referenceInvestment;
+
+      displays.visitorsValue.textContent = formatNumber(visitors);
+      displays.conversionValue.textContent = `${Math.round(conversion * 100)}%`;
+      displays.visibilityValue.textContent = `${Math.round(visibility * 100)}%`;
+      displays.basketValue.textContent = `${basket}€`;
+
+      displays.extraTraffic.textContent = formatNumber(extraTraffic);
+      displays.extraCustomers.textContent = formatNumber(extraCustomers);
+      displays.extraRevenue.textContent = formatCurrency(extraRevenue);
+      displays.potentialReturn.textContent = `${potentialReturn.toFixed(1).replace('.', ',')}x`;
+
+      let tone = 'une progression solide';
+      if (extraRevenue > 3000) tone = 'un levier de croissance particulièrement fort';
+      else if (extraRevenue > 1500) tone = 'un potentiel commercial très intéressant';
+      else if (extraRevenue < 700) tone = 'un gain progressif mais déjà tangible';
+
+      displays.simSummary.textContent = `Avec ces hypothèses, une meilleure visibilité pourrait représenter ${formatCurrency(extraRevenue)} de revenu potentiel mensuel supplémentaire, soit ${tone} pour votre établissement.`;
+    }
+
+    Object.values(sliders).forEach(slider => slider.addEventListener('input', updateSimulator));
+    updateSimulator();
+
+    const contactForm = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMsg');
+
+    contactForm?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      successMsg.style.display = 'block';
+      contactForm.reset();
+      updateSimulator();
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
