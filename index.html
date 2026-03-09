@@ -2473,7 +2473,7 @@
             <div class="slider-group">
               <div class="slider-head">
                 <strong>Visiteurs mensuels</strong>
-                <span class="slider-value" id="visitorsValue">1 500</span>
+                <span class="slider-value" id="visitorsValue">1 500</span>
               </div>
               <input id="visitors" type="range" min="300" max="10000" step="100" value="1500" />
             </div>
@@ -2708,7 +2708,7 @@
             <h3>Demande de contact</h3>
             <p>Remplissez ce formulaire en quelques instants. Il est pensé pour rester clair, rapide et agréable sur tous les écrans.</p>
 
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/xjgagevj" method="POST">
               <div class="form-grid">
                 <div class="field">
                   <label for="name">Nom</label>
@@ -2737,16 +2737,19 @@
 
                 <div class="field full">
                   <label for="message">Message</label>
-                  <textarea id="message" name="message" placeholder="Présentez brièvement votre situation, vos objectifs ou votre besoin."></textarea>
+                  <textarea id="message" name="message" placeholder="Présentez brièvement votre situation, vos objectifs ou votre besoin." required></textarea>
                 </div>
               </div>
 
               <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Envoyer ma demande</button>
+                <button type="submit" class="btn btn-primary" id="contactSubmitBtn">Envoyer ma demande</button>
                 <div class="form-note">Réponse claire, rapide et adaptée à votre établissement.</div>
               </div>
 
-              <div class="success-msg" id="successMsg">Merci. Votre demande a bien été prise en compte.</div>
+              <div class="success-msg" id="successMsg">Votre demande a bien été envoyée.</div>
+              <div class="success-msg" id="errorMsg" style="display:none; background: rgba(220, 38, 38, 0.08); color: #991b1b;">
+                Une erreur est survenue. Merci de réessayer.
+              </div>
             </form>
           </div>
         </div>
@@ -2887,15 +2890,40 @@
 
     const contactForm = document.getElementById('contactForm');
     const successMsg = document.getElementById('successMsg');
+    const errorMsg = document.getElementById('errorMsg');
+    const contactSubmitBtn = document.getElementById('contactSubmitBtn');
 
-    contactForm?.addEventListener('submit', (event) => {
+    contactForm?.addEventListener('submit', async (event) => {
       event.preventDefault();
-      successMsg.style.display = 'block';
-      contactForm.reset();
-      updateSimulator();
-      setTimeout(() => {
-        successMsg.style.display = 'none';
-      }, 4000);
+
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      const originalText = contactSubmitBtn.textContent;
+      contactSubmitBtn.disabled = true;
+      contactSubmitBtn.textContent = 'Envoi en cours...';
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          contactForm.reset();
+          successMsg.style.display = 'block';
+        } else {
+          errorMsg.style.display = 'block';
+        }
+      } catch (error) {
+        errorMsg.style.display = 'block';
+      } finally {
+        contactSubmitBtn.disabled = false;
+        contactSubmitBtn.textContent = originalText;
+      }
     });
   </script>
 </body>
